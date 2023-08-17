@@ -8,8 +8,6 @@ echo If you want to use this for another program, reinstall Autorun.cmd from Git
 pause
 exit
 )
-echo This will make your program always run when you log in. Are you sure?
-echo You can disable the runner in the Startup section of the Task Manager (ctrl+shift+esc to open)
 echo What do you want to do?
 echo 1) Set up Autorun
 echo 2) Test Autorun
@@ -21,7 +19,7 @@ if %binput%==3 exit
 :setupp
 echo This will make your program always run when you log in. Are you sure?
 echo.
-echo You can disable the runner in the Startup section of the Task Manager (ctrl+shift+esc to open)
+echo You can later always disable the runner in the Startup section of the Task Manager (ctrl+shift+esc to open)
 echo For who should the autorun apply?
 echo 1) Current user only
 echo 2) All users (Admin)
