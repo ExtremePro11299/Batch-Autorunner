@@ -9,7 +9,7 @@ pause
 exit
 )
 echo What do you want to do?
-echo 1) Set up Autorun
+echo 1) Activate Autorun
 echo 2) Test Autorun
 echo 3) Exit
 set /p binput=
@@ -25,5 +25,5 @@ echo 1) Current user only
 echo 2) All users (Admin)
 set /p sinput=
 if %sinput%==1 move "Autorun.cmd" "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-if %sinput%==2 move "Autorun.cmd" "C:\ProgramData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+if %sinput%==2 move "Autorun.cmd" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
 goto checkAutorun
