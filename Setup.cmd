@@ -11,7 +11,7 @@ exit
 :start
 echo What do you want to do?
 echo 1) Activate Autorun
-echo 2) Test Autorun
+echo 2) Test Autorun (only works if autorun hasn't been activated yet)
 echo 3) Exit
 set /p binput=
 if %binput%==1 goto setupp
