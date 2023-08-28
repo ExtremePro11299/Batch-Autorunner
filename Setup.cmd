@@ -3,10 +3,15 @@ cd /d "%~dp0"
 :checkAutorun
 if not exist Autorun.cmd (
 echo Autorun.cmd does not exist.
-echo The program may already have been set up.
-echo If you want to use this for another program, reinstall Autorun.cmd from GitHub.
-pause
-exit
+echo The autorun may have already been activated.
+echo If you want to use this for another program, reinstall Autorun.cmd from GitHub or deactivate the autorun.
+echo What do you want to do?
+echo 1) Deactivate Autorun
+echo 2) Exit
+set /p dinput=
+if %dinput%==1 call :autorunOff
+if %dinput%==2 call Autorun.cmd
+goto :checkAutorun
 )
 :start
 echo What do you want to do?
@@ -29,3 +34,13 @@ set /p sinput=
 if %sinput%==1 move "Autorun.cmd" "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 if %sinput%==2 move "Autorun.cmd" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
 goto checkAutorun
+:autorunOff
+IF [%sinput%] == [] (
+echo For who did the autorun apply?
+echo 1) For the current user only
+echo 2) For all users
+set /p sinput=
+)
+if %sinput%==1 move "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Autorun.cmd" "%~dp0"
+if %sinput%==2 move "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\Autorun.cmd" "%~dp0"
+echo Autorun has been deactivated.
