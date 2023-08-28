@@ -3,5 +3,6 @@
 2. Run Setup.cmd
    
 Now, everytime you log in to Windows, it will run your program right away.
+Do not rename Autorun.cmd. If you do so, Setup.cmd will not be able to access it.
 # Updates
 - Autorun can be now deactivated
