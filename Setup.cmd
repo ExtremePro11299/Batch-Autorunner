@@ -24,11 +24,13 @@ echo 1) Activate Autorun
 echo 2) Test Autorun (only works if autorun hasn't been activated yet)
 echo 3) Exit
 set /p binput=
+cls
 if !binput!==1 goto setupp
 if !binput!==2 call Autorun.cmd
 if !binput!==3 exit
 goto start
 :setupp
+cls
 echo This will make your program always run when you log in. Are you sure?
 echo.
 echo You can later always disable the runner in the Startup section of the Task Manager (ctrl+shift+esc to open)
