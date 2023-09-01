@@ -4,5 +4,6 @@
    
 Now, everytime you log in to Windows, it will run your program right away.
 Do not rename Autorun.cmd. If you do so, Setup.cmd will not be able to access it.
-# Updates
+# Updates (newest to oldest)
+- Fixed cannot find file "programPath" error
 - Autorun can be now deactivated
